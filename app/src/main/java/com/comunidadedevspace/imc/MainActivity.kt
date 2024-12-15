@@ -12,18 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Recuperar os componentes EditText
-        // criar uma variavel e associar o componente de UI<EditText>
-        //recuperar o botao da tela
-        // colocar ação do botão setOnClickLister
-        // Recuperar o texto digitado no edtpeso
-
         val edtpeso = findViewById<TextInputEditText>(R.id.edittext_peso)
         val edtaltura = findViewById<TextInputEditText>(R.id.edittext_altura)
         val btncalcular = findViewById<Button>(R.id.btn_calcular)
 
         btncalcular.setOnClickListener {
-
 
             val pesostr: String = edtpeso.text.toString()
             val alturastr: String = edtaltura.text.toString()
@@ -40,14 +33,8 @@ class MainActivity : AppCompatActivity() {
                 val peso = pesostr.toFloat()
                 val altura = alturastr.toFloat()
 
-
                 val calcimc = altura * altura
                 val result = peso / calcimc
-
-                //navegar para proxima tela
-                // criar o layout da proxima tela
-                // passar dados(resultado) para proxima tela
-                // Intent - Classe do proprio Android
 
                val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(KEY_RESULT_IMC, result)
